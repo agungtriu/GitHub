@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleimageview_detail_photo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="@dimen/margin_all_medium"
+        android:layout_marginTop="@dimen/margin_all_medium"
+        android:layout_marginEnd="@dimen/margin_all_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textview_detail_name"
+        style="@style/TextContent.Title.Center"
+        android:layout_marginStart="@dimen/margin_all_medium"
+        android:layout_marginTop="@dimen/margin_all_medium"
+        android:layout_marginEnd="@dimen/margin_all_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/circleimageview_detail_photo" />
+
+    <TextView
+        android:id="@+id/textview_detail_username"
+        style="@style/TextContent.Desc.Center"
+        android:layout_marginStart="@dimen/margin_all_medium"
+        android:layout_marginTop="@dimen/margin_all_small"
+        android:layout_marginEnd="@dimen/margin_all_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_detail_name" />
+
+    <ImageView
+        android:id="@+id/imageview_detail_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_all_medium"
+        android:layout_marginTop="@dimen/margin_all_medium"
+        android:src="@drawable/ic_company"
+        app:layout_constraintEnd_toStartOf="@id/textview_detail_company"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_detail_username" />
+
+    <TextView
+        android:id="@+id/textview_detail_company"
+        style="@style/TextContent.Desc"
+        android:layout_marginStart="@dimen/margin_all_small"
+        android:layout_marginEnd="@dimen/margin_all_medium"
+        app:layout_constraintBottom_toBottomOf="@id/imageview_detail_company"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageview_detail_company"
+        app:layout_constraintTop_toTopOf="@id/imageview_detail_company" />
+
+    <ImageView
+        android:id="@+id/imageview_detail_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_all_medium"
+        android:layout_marginTop="@dimen/margin_all_small"
+        android:src="@drawable/ic_location"
+        app:layout_constraintEnd_toStartOf="@id/textview_detail_location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageview_detail_company" />
+
+    <TextView
+        android:id="@+id/textview_detail_location"
+        style="@style/TextContent.Desc"
+        android:layout_marginStart="@dimen/margin_all_small"
+        android:layout_marginEnd="@dimen/margin_all_medium"
+        app:layout_constraintBottom_toBottomOf="@id/imageview_detail_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageview_detail_location"
+        app:layout_constraintTop_toTopOf="@id/imageview_detail_location" />
+
+    <TextView
+        android:id="@+id/textview_detail_repository"
+        style="@style/TextContent.Desc.Center"
+        android:layout_marginStart="@dimen/margin_all_medium"
+        android:layout_marginTop="@dimen/margin_all_medium"
+        app:layout_constraintEnd_toStartOf="@id/textview_detail_follower"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageview_detail_location" />
+
+    <TextView
+        android:id="@+id/textview_detail_follower"
+        style="@style/TextContent.Desc.Center"
+        android:layout_marginStart="@dimen/margin_all_small"
+        android:layout_marginEnd="@dimen/margin_all_small"
+        app:layout_constraintBottom_toBottomOf="@id/textview_detail_repository"
+        app:layout_constraintEnd_toStartOf="@id/textview_detail_following"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/textview_detail_repository"
+        app:layout_constraintTop_toTopOf="@id/textview_detail_repository" />
+
+    <TextView
+        android:id="@+id/textview_detail_following"
+        style="@style/TextContent.Desc.Center"
+        android:layout_marginEnd="@dimen/margin_all_medium"
+        app:layout_constraintBottom_toBottomOf="@id/textview_detail_repository"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/textview_detail_follower"
+        app:layout_constraintTop_toTopOf="@id/textview_detail_repository" />
+
+    <TextView
+        android:id="@+id/textview_detail_titlerepository"
+        style="@style/TextContent.Desc.Center"
+        android:layout_marginTop="@dimen/margin_all_small"
+        android:text="@string/detail_repository"
+        app:layout_constraintEnd_toEndOf="@id/textview_detail_repository"
+        app:layout_constraintStart_toStartOf="@id/textview_detail_repository"
+        app:layout_constraintTop_toBottomOf="@id/textview_detail_repository" />
+
+    <TextView
+        android:id="@+id/textview_detail_titlefollower"
+        style="@style/TextContent.Desc.Center"
+        android:text="@string/detail_follower"
+        app:layout_constraintBottom_toBottomOf="@id/textview_detail_titlerepository"
+        app:layout_constraintEnd_toEndOf="@id/textview_detail_follower"
+        app:layout_constraintStart_toStartOf="@id/textview_detail_follower"
+        app:layout_constraintTop_toTopOf="@id/textview_detail_titlerepository" />
+
+    <TextView
+        android:id="@+id/textview_detail_titlefollowing"
+        style="@style/TextContent.Desc.Center"
+        android:text="@string/detail_following"
+        app:layout_constraintBottom_toBottomOf="@id/textview_detail_titlerepository"
+        app:layout_constraintEnd_toEndOf="@id/textview_detail_following"
+        app:layout_constraintStart_toStartOf="@id/textview_detail_following"
+        app:layout_constraintTop_toTopOf="@id/textview_detail_titlerepository" />
+</androidx.constraintlayout.widget.ConstraintLayout>

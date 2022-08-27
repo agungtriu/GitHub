@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GitHub</string>
+    <string name="detail_company">Company</string>
+    <string name="detail_location">Location</string>
+    <string name="detail_repository">Repository</string>
+    <string name="detail_follower">Follower</string>
+    <string name="detail_following">Following</string>
+    <string name="all_share">Share</string>
+</resources>
