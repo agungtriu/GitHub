@@ -1,4 +1,4 @@
-package com.example.github.accounts.home
+package com.example.github.accounts
 
 import android.content.Intent
 import android.view.LayoutInflater

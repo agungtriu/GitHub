@@ -18,12 +18,6 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 class DetailActivity : AppCompatActivity() {
-    companion object {
-        const val EXTRA_DETAIL = "extra_detail"
-
-        @StringRes
-        private val TAB_TITLES = intArrayOf(R.string.tab_follower, R.string.tab_following)
-    }
 
     private lateinit var detailBinding: ActivityDetailBinding
     private val detailViewModel: DetailViewModel by viewModels()
@@ -108,5 +102,12 @@ class DetailActivity : AppCompatActivity() {
                 viewDetail.visibility = View.GONE
             }
         }
+    }
+
+    companion object {
+        const val EXTRA_DETAIL = "extra_detail"
+
+        @StringRes
+        private val TAB_TITLES = intArrayOf(R.string.tab_follower, R.string.tab_following)
     }
 }

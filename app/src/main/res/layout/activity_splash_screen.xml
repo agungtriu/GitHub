@@ -11,6 +11,7 @@
         android:layout_height="300dp"
         android:layout_marginStart="@dimen/margin_all_medium"
         android:layout_marginEnd="@dimen/margin_all_medium"
+        android:contentDescription="@string/app_name"
         android:src="@mipmap/ic_launcher_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
