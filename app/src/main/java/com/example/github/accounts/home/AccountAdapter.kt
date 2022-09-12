@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.github.accounts.detail.DetailActivity.Companion.EXTRA_DETAIL
-import com.example.github.datasource.UsersItem
 import com.example.github.accounts.detail.DetailActivity
+import com.example.github.accounts.detail.DetailActivity.Companion.EXTRA_DETAIL
 import com.example.github.databinding.ItemAccountBinding
+import com.example.github.datasource.UsersItem
 
 class AccountAdapter : RecyclerView.Adapter<AccountAdapter.HomeViewHolder>() {
     private val listAccount = ArrayList<UsersItem>()

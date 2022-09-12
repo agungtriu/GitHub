@@ -9,9 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.github.R
+import com.example.github.databinding.ActivityHomeBinding
 import com.example.github.datasource.UserResponse
 import com.example.github.datasource.UsersItem
-import com.example.github.databinding.ActivityHomeBinding
 import com.example.github.utils.Utils.Companion.loadJSONFromAsset
 import com.example.github.utils.Utils.Companion.showLoading
 import com.google.gson.Gson

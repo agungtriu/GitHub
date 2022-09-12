@@ -1,11 +1,10 @@
 package com.example.github.accounts.detail
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.github.datasource.remote.ApiConfig
-import com.example.github.datasource.remote.response.*
+import com.example.github.datasource.remote.response.DetailResponse
 import com.example.github.utils.Utils.Companion.simplifyNumber
 import retrofit2.Call
 import retrofit2.Callback

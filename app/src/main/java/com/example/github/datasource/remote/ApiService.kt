@@ -1,6 +1,9 @@
 package com.example.github.datasource.remote
 
-import com.example.github.datasource.remote.response.*
+import com.example.github.datasource.remote.response.DetailResponse
+import com.example.github.datasource.remote.response.FollowersItem
+import com.example.github.datasource.remote.response.FollowingItem
+import com.example.github.datasource.remote.response.SearchResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
