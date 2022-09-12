@@ -6,4 +6,8 @@
     <string name="detail_follower">Follower</string>
     <string name="detail_following">Following</string>
     <string name="all_share">Share</string>
+    <string name="action_search">Search</string>
+    <string name="home_queryhint">Masukkan username github</string>
+    <string name="tab_follower">FOLLOWER</string>
+    <string name="tab_following">FOLLOWING</string>
 </resources>
