@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.github">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,17 +14,17 @@
         android:theme="@style/Theme.GitHub"
         tools:targetApi="31">
         <activity
-            android:name=".DetailActivity"
+            android:name=".accounts.detail.DetailActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".HomeActivity" />
+                android:value=".accounts.home.HomeActivity" />
         </activity>
         <activity
-            android:name=".HomeActivity"
+            android:name=".accounts.home.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".splashscreen.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
