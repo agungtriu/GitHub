@@ -17,7 +17,7 @@ data class SearchItem(
     val starredUrl: String? = null,
 
     @field:SerializedName("login")
-    val login: String? = null,
+    val login: String,
 
     @field:SerializedName("followers_url")
     val followersUrl: String? = null,

@@ -1,8 +1,12 @@
 package com.example.github.accounts.detail
 
+import android.app.Application
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.github.datasource.AccountRepository
+import com.example.github.datasource.local.room.entity.Account
 import com.example.github.datasource.remote.ApiConfig
 import com.example.github.datasource.remote.response.DetailResponse
 import com.example.github.utils.Utils.Companion.simplifyNumber
@@ -10,12 +14,15 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class DetailViewModel : ViewModel() {
+class DetailViewModel(application: Application) : ViewModel() {
     private val _detailAccount = MutableLiveData<DetailResponse>()
     val detailAccount: LiveData<DetailResponse> = _detailAccount
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
+
+    private val _isFavorite = MutableLiveData<Boolean>()
+    val isFavorite: LiveData<Boolean> = _isFavorite
 
     fun getDetailAccount(username: String) {
         _isLoading.value = true
@@ -71,4 +78,16 @@ class DetailViewModel : ViewModel() {
             }
         })
     }
+
+    private val accountRepository = AccountRepository(application)
+
+    fun getFavoriteAccountByUsername(username: String, lifecycleOwner: LifecycleOwner) {
+        accountRepository.getFavoriteAccountByUsername(username).observe(lifecycleOwner) {
+            _isFavorite.value = it != null
+        }
+    }
+
+    fun insert(account: Account) = accountRepository.insertFavoriteAccount(account)
+
+    fun delete(username: String) = accountRepository.deleteFavoriteAccountByUsername(username)
 }

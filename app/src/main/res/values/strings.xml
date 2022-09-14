@@ -10,4 +10,9 @@
     <string name="home_queryhint">Masukkan username github</string>
     <string name="tab_follower">FOLLOWER</string>
     <string name="tab_following">FOLLOWING</string>
+    <string name="all_favorite">Favorite</string>
+    <string name="all_setting">Setting</string>
+    <string name="setting_light">Theme Light</string>
+    <string name="setting_dark">Theme Dark</string>
+    <string name="detail_fab">Floating Action Button Favorite</string>
 </resources>

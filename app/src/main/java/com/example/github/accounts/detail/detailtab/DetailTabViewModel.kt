@@ -3,7 +3,7 @@ package com.example.github.accounts.detail.detailtab
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.github.datasource.UsersItem
+import com.example.github.datasource.local.room.entity.Account
 import com.example.github.datasource.remote.ApiConfig
 import com.example.github.datasource.remote.response.FollowersItem
 import com.example.github.datasource.remote.response.FollowingItem
@@ -12,13 +12,14 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class DetailTabViewModel : ViewModel() {
-    private val _listAccounts = MutableLiveData<List<UsersItem>>()
-    val listAccounts: LiveData<List<UsersItem>> = _listAccounts
+    private val _listAccounts = MutableLiveData<List<Account>>()
+    val listAccounts: LiveData<List<Account>> = _listAccounts
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
-    private var userItems: MutableList<UsersItem> = mutableListOf()
+    private var userItems: MutableList<Account> = mutableListOf()
+
     fun getFollowers(username: String) {
         userItems.clear()
         _isLoading.value = true
@@ -34,7 +35,7 @@ class DetailTabViewModel : ViewModel() {
                     if (!items.isNullOrEmpty()) {
                         for (i in items.indices) {
                             userItems.add(
-                                UsersItem(items[i].login, items[i].avatarUrl)
+                                Account(items[i].login, items[i].avatarUrl)
                             )
                         }
                     }
@@ -47,6 +48,7 @@ class DetailTabViewModel : ViewModel() {
             }
         })
     }
+
     fun getFollowing(username: String) {
         userItems.clear()
         _isLoading.value = true
@@ -62,7 +64,7 @@ class DetailTabViewModel : ViewModel() {
                     if (!items.isNullOrEmpty()) {
                         for (i in items.indices) {
                             userItems.add(
-                                UsersItem(items[i].login, items[i].avatarUrl)
+                                Account(items[i].login, items[i].avatarUrl)
                             )
                         }
                     }

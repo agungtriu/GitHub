@@ -15,6 +15,7 @@ class DetailTabFragment : Fragment() {
     private lateinit var fragmentDetailTabBinding: FragmentDetailTabBinding
     private lateinit var accountAdapter: AccountAdapter
     private val detailTabViewModel: DetailTabViewModel by activityViewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

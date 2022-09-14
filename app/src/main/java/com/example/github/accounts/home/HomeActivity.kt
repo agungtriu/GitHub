@@ -2,20 +2,20 @@ package com.example.github.accounts.home
 
 import android.app.SearchManager
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.github.R
-import com.example.github.databinding.ActivityHomeBinding
-import com.example.github.datasource.UserResponse
-import com.example.github.datasource.UsersItem
 import com.example.github.accounts.AccountAdapter
-import com.example.github.utils.Utils.Companion.loadJSONFromAsset
+import com.example.github.accounts.favorite.FavoriteActivity
+import com.example.github.accounts.setting.SettingActivity
+import com.example.github.databinding.ActivityHomeBinding
 import com.example.github.utils.Utils.Companion.showLoading
-import com.google.gson.Gson
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var homeBinding: ActivityHomeBinding
@@ -32,18 +32,20 @@ class HomeActivity : AppCompatActivity() {
             setHasFixedSize(true)
             adapter = accountAdapter
         }
+
         with(homeViewModel) {
             listAccounts.observe(this@HomeActivity) { accounts ->
+                accountAdapter.setAccount(accounts, false)
+            }
+            listSearchAccounts.observe(this@HomeActivity) { accounts ->
                 accountAdapter.setAccount(accounts, true)
             }
             isLoading.observe(this@HomeActivity) {
                 showLoading(it, homeBinding.progressbarHome)
             }
+            loadData(this@HomeActivity)
         }
 
-        val jsonString = loadJSONFromAsset(this, "githubuser.json")
-        val data = Gson().fromJson(jsonString, UserResponse::class.java)
-        accountAdapter.setAccount(data.users as List<UsersItem>, false)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -67,5 +69,21 @@ class HomeActivity : AppCompatActivity() {
             }
         })
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_favorite -> {
+                val intent = Intent(this, FavoriteActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.action_setting -> {
+                val intent = Intent(this, SettingActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }

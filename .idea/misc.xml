@@ -3,6 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/agung/StudioProjects/GitHub/app/src/main/res/drawable-night/ic_company.xml" value="0.1" />
+        <entry key="..\:/Users/agung/StudioProjects/GitHub/app/src/main/res/drawable-night/ic_dark.xml" value="0.1" />
+        <entry key="..\:/Users/agung/StudioProjects/GitHub/app/src/main/res/drawable-night/ic_light.xml" value="0.1" />
+        <entry key="..\:/Users/agung/StudioProjects/GitHub/app/src/main/res/drawable-night/ic_location.xml" value="0.1" />
+        <entry key="..\:/Users/agung/StudioProjects/GitHub/app/src/main/res/drawable-night/ic_search.xml" value="0.1" />
+        <entry key="..\:/Users/agung/StudioProjects/GitHub/app/src/main/res/drawable-night/ic_settings.xml" value="0.1" />
+        <entry key="..\:/Users/agung/StudioProjects/GitHub/app/src/main/res/layout/activity_detail.xml" value="0.1" />
+        <entry key="..\:/Users/agung/StudioProjects/GitHub/app/src/main/res/layout/activity_favorite.xml" value="0.1" />
+        <entry key="..\:/Users/agung/StudioProjects/GitHub/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Users/agung/StudioProjects/GitHub/app/src/main/res/layout/activity_setting.xml" value="0.25" />
+        <entry key="..\:/Users/agung/StudioProjects/GitHub/app/src/main/res/layout/item_account.xml" value="0.1" />
+        <entry key="..\:/Users/agung/StudioProjects/GitHub/app/src/main/res/menu/menu_detail.xml" value="0.1" />
+        <entry key="..\:/Users/agung/StudioProjects/GitHub/app/src/main/res/menu/menu_home.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-night/ic_company.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-night/ic_location.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-night/ic_share.xml" value="0.1" />
