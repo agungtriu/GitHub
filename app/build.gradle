@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
     id 'kotlin-parcelize'
 }
 
@@ -41,6 +42,8 @@ dependencies {
     implementation "androidx.activity:activity-ktx:$activityKtxVersion"
     implementation "androidx.fragment:fragment-ktx:$fragmentKtxVersion"
     implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation "androidx.recyclerview:recyclerview:$recyclerViewVersion"
+    implementation "androidx.cardview:cardview:$cardViewVersion"
     implementation "com.google.android.material:material:$materialVersion"
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
     implementation "de.hdodenhof:circleimageview:$circleImageViewVersion"
@@ -50,6 +53,12 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3Version"
+    implementation "androidx.datastore:datastore-preferences:$datastoreVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewModelKtxVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$liveDataKtxVersion"
+    implementation "androidx.room:room-runtime:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    implementation "androidx.paging:paging-runtime-ktx:$pagingVersion"
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$junitExtversion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"

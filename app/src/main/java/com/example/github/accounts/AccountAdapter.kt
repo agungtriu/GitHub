@@ -3,28 +3,34 @@ package com.example.github.accounts
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.github.accounts.detail.DetailActivity
 import com.example.github.accounts.detail.DetailActivity.Companion.EXTRA_DETAIL
 import com.example.github.databinding.ItemAccountBinding
-import com.example.github.datasource.UsersItem
+import com.example.github.datasource.local.room.entity.AccountEntity
+import com.example.github.helper.AccountDiffCallback
 
 class AccountAdapter : RecyclerView.Adapter<AccountAdapter.HomeViewHolder>() {
-    private val listAccount = ArrayList<UsersItem>()
-    private var _isOnline = false
-    fun setAccount(accounts: List<UsersItem>, isOnline: Boolean) {
-        this.listAccount.clear()
-        this.listAccount.addAll(accounts)
-        _isOnline = isOnline
-        notifyDataSetChanged()
+    private val listAccount = ArrayList<AccountEntity>()
+    private var _isApi = false
+    fun setAccount(accounts: List<AccountEntity>, isApi: Boolean) {
+        val diffCallback = AccountDiffCallback(listAccount, accounts)
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
+        if (listAccount.isNotEmpty()) {
+            listAccount.clear()
+        }
+        listAccount.addAll(accounts)
+        _isApi = isApi
+        diffResult.dispatchUpdatesTo(this)
     }
 
     inner class HomeViewHolder(private val binding: ItemAccountBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(account: UsersItem) {
+        fun bind(account: AccountEntity) {
             with(binding) {
-                if (_isOnline) {
+                if (_isApi) {
                     Glide.with(itemView.context)
                         .load(account.avatar)
                         .into(imageviewItemaccountPhoto)

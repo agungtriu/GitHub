@@ -4,12 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".accounts.detail.detailtab.DetailTabFragment">
+    tools:context=".accounts.detail.detailtab.FollowersFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_followers"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/item_account" />
+
+    <TextView
+        android:id="@+id/textview_followers_zero"
+        style="@style/TextContent.Title.Center"
+        android:text="@string/followers_zero"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -4,9 +4,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.github.accounts.detail.detailtab.DetailTabFragment
-import com.example.github.accounts.detail.detailtab.DetailTabFragment.Companion.EXTRA_FOLLOWER
-import com.example.github.accounts.detail.detailtab.DetailTabFragment.Companion.EXTRA_FOLLOWING
+import com.example.github.accounts.detail.detailtab.FollowersFragment
+import com.example.github.accounts.detail.detailtab.FollowersFragment.Companion.EXTRA_FOLLOWER
+import com.example.github.accounts.detail.detailtab.FollowingFragment
+import com.example.github.accounts.detail.detailtab.FollowingFragment.Companion.EXTRA_FOLLOWING
 
 class SectionsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
     lateinit var username: String
@@ -18,13 +19,13 @@ class SectionsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(a
         var fragment: Fragment? = null
         when (position) {
             0 -> {
-                fragment = DetailTabFragment()
+                fragment = FollowersFragment()
                 fragment.arguments = Bundle().apply {
                     putString(EXTRA_FOLLOWER, username)
                 }
             }
             1 -> {
-                fragment = DetailTabFragment()
+                fragment = FollowingFragment()
                 fragment.arguments = Bundle().apply {
                     putString(EXTRA_FOLLOWING, username)
                 }
