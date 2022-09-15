@@ -91,6 +91,13 @@ class HomeActivity : AppCompatActivity() {
                         showLoading(false, progressbarHome, null, null)
                         if (it.data != null) {
                             accountAdapter.setAccount(it.data, true)
+                            showDataNotFound(
+                                false,
+                                textviewHomeNotfound,
+                                viewHome,
+                                null,
+                                recyclerviewHome
+                            )
                         } else {
                             showDataNotFound(
                                 true,
@@ -103,8 +110,10 @@ class HomeActivity : AppCompatActivity() {
                     }
                     Status.ERROR -> {
                         showLoading(false, progressbarHome, null, null)
-                        Toast.makeText(this@HomeActivity, it.message, Toast.LENGTH_LONG)
-                            .show()
+                        if (!it.message.isNullOrEmpty()) {
+                            Toast.makeText(this@HomeActivity, it.message, Toast.LENGTH_LONG)
+                                .show()
+                        }
                         showDataNotFound(
                             true,
                             textviewHomeNotfound,
