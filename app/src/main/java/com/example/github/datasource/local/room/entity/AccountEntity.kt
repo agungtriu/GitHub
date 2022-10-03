@@ -1,10 +1,10 @@
-package com.example.github.datasource
+package com.example.github.datasource.local.room.entity
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class UsersItem(
-    val username: String? = null,
+data class AccountEntity(
+    val username: String,
     val avatar: String? = null
 ) : Parcelable

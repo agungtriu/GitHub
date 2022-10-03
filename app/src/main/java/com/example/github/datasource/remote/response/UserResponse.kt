@@ -1,4 +1,4 @@
-package com.example.github.datasource
+package com.example.github.datasource.remote.response
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

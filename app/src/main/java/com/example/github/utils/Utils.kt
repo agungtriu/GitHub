@@ -3,6 +3,9 @@ package com.example.github.utils
 import android.content.Context
 import android.view.View
 import android.widget.ProgressBar
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.io.IOException
 
 class Utils {
@@ -18,21 +21,67 @@ class Utils {
             }
         }
 
-        fun simplifyNumber(number: Int): String {
+        fun simplifyNumber(number: Float): String {
             return if (number.div(1000000) >= 1) {
-                number.div(1000000).toString().plus("M")
+                String.format("%.1fM", number / 1000000)
             } else if (number.div(1000) >= 1) {
-                number.div(1000).toString().plus("K")
+                String.format("%.1fK", number / 1000)
             } else {
-                number.toString()
+                String.format("%.0f", number)
             }
         }
 
-        fun showLoading(isLoading: Boolean, progressBar: ProgressBar) {
-            progressBar.visibility = if (isLoading) {
-                View.VISIBLE
+        fun showLoading(
+            isLoading: Boolean, progressBar: ProgressBar, view: View?, fab: FloatingActionButton?
+        ) {
+            if (isLoading) {
+                progressBar.visibility = View.VISIBLE
+                if (view != null) {
+                    view.visibility = View.VISIBLE
+                }
+                if (fab != null) {
+                    fab.visibility = View.GONE
+                }
             } else {
-                View.GONE
+                progressBar.visibility = View.GONE
+                if (view != null) {
+                    view.visibility = View.GONE
+                }
+                if (fab != null) {
+                    fab.visibility = View.VISIBLE
+                }
+            }
+        }
+
+        fun showDataNotFound(
+            isNotFound: Boolean,
+            textView: TextView,
+            view: View?,
+            fab: FloatingActionButton?,
+            rv: RecyclerView?
+        ) {
+            if (isNotFound) {
+                textView.visibility = View.VISIBLE
+                if (view != null) {
+                    view.visibility = View.VISIBLE
+                }
+                if (fab != null) {
+                    fab.visibility = View.GONE
+                }
+                if (rv != null) {
+                    rv.visibility = View.GONE
+                }
+            } else {
+                textView.visibility = View.GONE
+                if (view != null) {
+                    view.visibility = View.GONE
+                }
+                if (fab != null) {
+                    fab.visibility = View.VISIBLE
+                }
+                if (rv != null) {
+                    rv.visibility = View.VISIBLE
+                }
             }
         }
     }
